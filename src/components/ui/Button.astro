@@ -1,10 +1,12 @@
 ---
+import { sitePath } from '@/utils/paths';
 interface Props {
   href: string;
   variant?: 'primary' | 'light' | 'outline' | 'amber' | 'dark';
   ariaLabel?: string;
 }
 const { href, variant = 'primary', ariaLabel } = Astro.props;
+const resolvedHref = href.startsWith('/') ? sitePath(href) : href;
 const styles = {
   primary: 'bg-teal text-white hover:bg-[#0e8f89] hover:-translate-y-0.5',
   light: 'bg-white text-blue-dark hover:bg-sky-50 hover:-translate-y-0.5',
@@ -13,7 +15,7 @@ const styles = {
   dark: 'bg-ink text-white hover:bg-navy hover:-translate-y-0.5',
 };
 ---
-<a href={href} aria-label={ariaLabel} class={`inline-flex min-h-12 items-center justify-center gap-3 rounded-full px-6 text-sm font-bold transition-all duration-200 ${styles[variant]}`}>
+<a href={resolvedHref} aria-label={ariaLabel} class={`inline-flex min-h-12 items-center justify-center gap-3 rounded-full px-6 text-sm font-bold transition-all duration-200 ${styles[variant]}`}>
   <slot />
   <span aria-hidden="true">↗</span>
 </a>

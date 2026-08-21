@@ -1,10 +1,11 @@
 ---
 import Logo from '@/components/ui/Logo.astro';
+import { sitePath } from '@/utils/paths';
 const year = new Date().getFullYear();
 const links = [
-  { href: '/quienes-somos', label: 'Quiénes somos' },
-  { href: '/productos', label: 'Productos' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: sitePath('/quienes-somos'), label: 'Quiénes somos' },
+  { href: sitePath('/productos'), label: 'Productos' },
+  { href: sitePath('/contacto'), label: 'Contacto' },
 ];
 const contact = [
   { href: 'tel:+56957216357', label: '+56 9 5721 6357', sub: 'Lunes a viernes · 9:00 a 18:00' },

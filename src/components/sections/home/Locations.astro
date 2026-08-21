@@ -1,4 +1,5 @@
 ---
+import { assetPath } from '@/utils/paths';
 type Location = {
   title: string;
   city: string;
@@ -15,7 +16,7 @@ const locations: Location[] = [
     city: 'Curicó',
     tag: 'Atención de proyectos',
     color: 'blue',
-    image: '/images/contacto/curico-oficina.webp',
+    image: assetPath('/images/contacto/curico-oficina.webp'),
     imageAlt: '',
   },
   {
@@ -24,7 +25,7 @@ const locations: Location[] = [
     address: 'Calle de servicio 20 Oriente #45, Talca.',
     tag: 'Fabricación e instalación',
     color: 'teal',
-    image: '/images/contacto/talca-planta.webp',
+    image: assetPath('/images/contacto/talca-planta.webp'),
     imageAlt: 'Planta productiva de VSM Industrial en Talca con perfiles de aluminio',
     mapHref: 'https://maps.google.com/?q=Calle+de+servicio+20+Oriente+45+Talca+Chile',
   },

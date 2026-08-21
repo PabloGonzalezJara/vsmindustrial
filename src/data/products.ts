@@ -1,4 +1,5 @@
 import type { Product } from '@/types/product';
+import { assetPath } from '@/utils/paths';
 
 export const products: Product[] = [
   {
@@ -8,7 +9,7 @@ export const products: Product[] = [
     description: 'Fabricación e instalación de ventanas de PVC y ventanas termopanel para proyectos residenciales y comerciales.',
     features: ['Fabricación a medida', 'Instalación especializada', 'Eficiencia energética'],
     accent: 'blue',
-    image: '/images/productos/ventanas-termopanel-pvc.webp',
+    image: assetPath('/images/productos/ventanas-termopanel-pvc.webp'),
     imageAlt: 'Ventanas termopanel de PVC instaladas en fachada residencial moderna',
   },
   {
@@ -18,7 +19,7 @@ export const products: Product[] = [
     description: 'Fabricación e instalación de ventanas y estructuras de aluminio con solución termopanel.',
     features: ['Estructuras de aluminio', 'Fabricación e instalación', 'Alta calidad'],
     accent: 'teal',
-    image: '/images/productos/ventanas-aluminio-termopanel.webp',
+    image: assetPath('/images/productos/ventanas-aluminio-termopanel.webp'),
     imageAlt: 'Gran ventana de aluminio con termopanel en edificio comercial',
   },
   {
@@ -28,7 +29,7 @@ export const products: Product[] = [
     description: 'Soluciones de cristal para separar, conectar y dar terminación a espacios interiores.',
     features: ['Mamparas de cristal', 'Puertas de cristal', 'Diseño para proyectos'],
     accent: 'navy',
-    image: '/images/productos/mamparas-puertas-cristal.webp',
+    image: assetPath('/images/productos/mamparas-puertas-cristal.webp'),
     imageAlt: 'Mamparas y puerta de cristal en interior de oficina moderna',
   },
   {
@@ -38,7 +39,7 @@ export const products: Product[] = [
     description: 'Estructuras de fachada que combinan aluminio y cristal para proyectos arquitectónicos.',
     features: ['Solución arquitectónica', 'Aluminio y cristal', 'Fabricación especializada'],
     accent: 'blue',
-    image: '/images/productos/muros-cortina.webp',
+    image: assetPath('/images/productos/muros-cortina.webp'),
     imageAlt: 'Muro cortina de aluminio y cristal en fachada de edificio comercial',
   },
   {
@@ -48,7 +49,7 @@ export const products: Product[] = [
     description: 'Soluciones para cerrar terrazas y organizar espacios de trabajo con terminaciones funcionales.',
     features: ['Cierres de terrazas', 'Divisiones para oficinas', 'Asesoría para proyectos'],
     accent: 'blue',
-    image: '/images/productos/cierres-terrazas-divisiones-oficinas.webp',
+    image: assetPath('/images/productos/cierres-terrazas-divisiones-oficinas.webp'),
     imageAlt: 'Cerramiento de terraza acristalada y división de oficina con marco metálico',
   },
 ];

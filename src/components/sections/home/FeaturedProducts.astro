@@ -2,6 +2,7 @@
 import SectionHeading from '@/components/common/SectionHeading.astro';
 import ProductCard from '@/components/sections/productos/ProductCard.astro';
 import { products } from '@/data/products';
+import { sitePath } from '@/utils/paths';
 ---
 <section class="relative bg-sand-warm py-20 sm:py-28">
   <div class="grid-pattern-light absolute inset-0 opacity-40"></div>
@@ -12,7 +13,7 @@ import { products } from '@/data/products';
         title="Empieza por la solución que necesitas"
         description="Cinco líneas para resolver ventanas, fachadas, cristales y divisiones con fabricación e instalación especializada."
       />
-      <a href="/productos" class="inline-flex min-h-12 items-center gap-3 self-start rounded-full border border-ink bg-ink px-6 text-sm font-bold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-navy sm:self-auto">
+      <a href={sitePath('/productos')} class="inline-flex min-h-12 items-center gap-3 self-start rounded-full border border-ink bg-ink px-6 text-sm font-bold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-navy sm:self-auto">
         Ver las cinco líneas <span aria-hidden="true">↗</span>
       </a>
     </div>
@@ -25,7 +26,7 @@ import { products } from '@/data/products';
       <span class="text-xs font-bold uppercase tracking-[0.22em] text-ink-soft">También:</span>
       <div class="flex flex-wrap gap-2">
         {products.slice(3).map((product) => (
-          <a class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-bold text-ink transition-colors hover:border-teal hover:text-teal" href="/productos">
+          <a class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-bold text-ink transition-colors hover:border-teal hover:text-teal" href={sitePath('/productos')}>
             {product.category}
             <span aria-hidden="true">→</span>
           </a>

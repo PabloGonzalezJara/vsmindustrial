@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHeading from '@/components/common/SectionHeading.astro';
+import { assetPath, sitePath } from '@/utils/paths';
 const companyProfile = [
   {
     number: '01',
@@ -30,25 +31,25 @@ const team = [
   {
     name: 'Rodrigo Yévenes',
     role: 'Gerente de Administración y Finanzas',
-    image: '/images/quienes-somos/rodrigo-yevenes.webp',
+    image: assetPath('/images/quienes-somos/rodrigo-yevenes.webp'),
     alt: 'Retrato de Rodrigo Yévenes, Gerente de Administración y Finanzas de VSM Industrial.',
   },
   {
     name: 'Héctor Cerda',
     role: 'Subgerente de Producción / Jefe de Operaciones',
-    image: '/images/quienes-somos/hector-cerda.webp',
+    image: assetPath('/images/quienes-somos/hector-cerda.webp'),
     alt: 'Retrato de Héctor Cerda, Subgerente de Producción y Jefe de Operaciones de VSM Industrial.',
   },
   {
     name: 'Mario Aliste',
     role: 'Contador Auditor',
-    image: '/images/quienes-somos/mario-aliste.webp',
+    image: assetPath('/images/quienes-somos/mario-aliste.webp'),
     alt: 'Retrato de Mario Aliste, Contador Auditor de VSM Industrial.',
   },
   {
     name: 'Cristóbal Cerda',
     role: 'Asistente Administrativo',
-    image: '/images/quienes-somos/cristobal-cerda.webp',
+    image: assetPath('/images/quienes-somos/cristobal-cerda.webp'),
     alt: 'Retrato de Cristóbal Cerda, Asistente Administrativo de VSM Industrial.',
   },
 ];
@@ -150,10 +151,10 @@ const team = [
         </p>
       </div>
       <div class="flex flex-wrap items-center gap-4 lg:justify-end">
-        <a href="/contacto" class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
+        <a href={sitePath('/contacto')} class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
           Agendar visita <span aria-hidden="true">↗</span>
         </a>
-        <a href="/productos" class="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10">
+        <a href={sitePath('/productos')} class="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10">
           Ver productos
         </a>
       </div>

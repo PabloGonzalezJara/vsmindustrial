@@ -1,5 +1,6 @@
 ---
 import type { Product } from '@/types/product';
+import { assetPath, sitePath } from '@/utils/paths';
 interface Props { product: Product; }
 const { product } = Astro.props;
 const palette = {
@@ -7,7 +8,7 @@ const palette = {
   teal: { bg: 'bg-teal', ring: 'ring-teal/30', text: 'text-teal', tint: 'bg-teal/10' },
   navy: { bg: 'bg-navy', ring: 'ring-navy/30', text: 'text-navy', tint: 'bg-navy/10' },
 }[product.accent];
-const imageSrc = product.image ?? '/images/productos/ventanas-termopanel-pvc.webp';
+const imageSrc = product.image ?? assetPath('/images/productos/ventanas-termopanel-pvc.webp');
 const imageAlt = product.imageAlt ?? product.name;
 ---
 <article class={`group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:${palette.ring} hover:shadow-panel`}>
@@ -44,7 +45,7 @@ const imageAlt = product.imageAlt ?? product.name;
       ))}
     </ul>
     <div class="mt-8 flex items-center justify-between border-t border-line-soft pt-5">
-      <a href="/contacto" class="inline-flex min-h-11 items-center gap-2 text-sm font-bold text-blue transition-colors hover:text-teal">
+      <a href={sitePath('/contacto')} class="inline-flex min-h-11 items-center gap-2 text-sm font-bold text-blue transition-colors hover:text-teal">
         Consultar solución <span aria-hidden="true">↗</span>
       </a>
       <span class="font-display text-2xl font-bold leading-none text-line-soft transition-colors group-hover:text-teal/20" aria-hidden="true">→</span>

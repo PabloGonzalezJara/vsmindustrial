@@ -1,4 +1,5 @@
 ---
+import { assetPath } from '@/utils/paths';
 const badges = [
   { label: 'Universidad del Bío-Bío', sub: 'Calidad certificada' },
   { label: 'PVC + Aluminio', sub: 'Materiales premium' },
@@ -32,7 +33,7 @@ const badges = [
     <div class="relative">
       <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-panel">
         <img
-          src="/images/home/certification-ubb.webp"
+          src={assetPath('/images/home/certification-ubb.webp')}
           alt="Placa de certificación de calidad Universidad del Bío-Bío"
           width="1200"
           height="900"

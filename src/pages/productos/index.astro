@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHeading from '@/components/common/SectionHeading.astro';
 import ProductCard from '@/components/sections/productos/ProductCard.astro';
 import { products } from '@/data/products';
+import { sitePath } from '@/utils/paths';
 ---
 <BaseLayout
   title="Productos"
@@ -56,7 +57,7 @@ import { products } from '@/data/products';
           title="Fabricación e instalación especializada"
           description="Cada línea responde a una necesidad distinta. Revisa sus características y conversemos sobre la solución adecuada para tu proyecto."
         />
-        <a href="/contacto" class="inline-flex min-h-12 items-center gap-3 self-start rounded-full bg-amber px-6 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-lg hover:shadow-amber/30 sm:self-auto">
+        <a href={sitePath('/contacto')} class="inline-flex min-h-12 items-center gap-3 self-start rounded-full bg-amber px-6 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-lg hover:shadow-amber/30 sm:self-auto">
           Consultar al equipo <span aria-hidden="true">↗</span>
         </a>
       </div>
@@ -87,7 +88,7 @@ import { products } from '@/data/products';
         </p>
       </div>
       <div class="flex flex-wrap items-center gap-4 lg:justify-end">
-        <a href="/contacto" class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
+        <a href={sitePath('/contacto')} class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
           Pedir asesoría <span aria-hidden="true">↗</span>
         </a>
         <a href="https://wa.me/56957216357" target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10">

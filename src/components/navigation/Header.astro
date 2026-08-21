@@ -1,23 +1,30 @@
 ---
 import Logo from '@/components/ui/Logo.astro';
+import { sitePath } from '@/utils/paths';
 const currentPath = Astro.url.pathname;
 const links = [
-  { href: '/quienes-somos', label: 'Quiénes somos' },
-  { href: '/productos', label: 'Productos' },
-  { href: '/contacto', label: 'Contacto' },
+  { path: '/quienes-somos', label: 'Quiénes somos' },
+  { path: '/productos', label: 'Productos' },
+  { path: '/contacto', label: 'Contacto' },
 ];
+const normalizePath = (path: string) => path.replace(/\/+$/, '') || '/';
+const isCurrent = (path: string) => {
+  const normalizedCurrentPath = normalizePath(currentPath);
+  return normalizedCurrentPath === normalizePath(path) || normalizedCurrentPath === normalizePath(sitePath(path));
+};
 ---
 <header class="absolute inset-x-0 top-0 z-20">
   <div class="shell flex min-h-20 items-center justify-between gap-6 border-b border-white/10 py-4 backdrop-blur-md">
     <Logo />
     <nav aria-label="Navegación principal" class="hidden items-center gap-1 md:flex">
       {links.map((link) => {
-        const isActive = currentPath === link.href;
+        const href = sitePath(link.path);
+        const isActive = isCurrent(link.path);
         return (
           <a
             class={`nav-link group relative inline-flex min-h-10 items-center rounded-full px-4 text-sm font-semibold transition-colors ${isActive ? 'is-active text-white' : 'text-white/80 hover:text-white'}`}
             data-active={isActive}
-            href={link.href}
+            href={href}
             aria-current={isActive ? 'page' : undefined}
           >
             <span class="relative">
@@ -34,7 +41,7 @@ const links = [
         <span class="grid size-7 place-items-center rounded-full bg-teal/15 text-teal" aria-hidden="true">��</span>
         +56 9 5721 6357
       </a>
-      <a href="/contacto" class="ml-2 inline-flex min-h-11 items-center gap-2 rounded-full bg-amber px-5 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-lg hover:shadow-amber/20">
+      <a href={sitePath('/contacto')} class="ml-2 inline-flex min-h-11 items-center gap-2 rounded-full bg-amber px-5 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-lg hover:shadow-amber/20">
         Hablemos <span aria-hidden="true">↗</span>
       </a>
     </nav>
@@ -47,14 +54,14 @@ const links = [
         <p class="border-b border-line-soft px-5 pb-3 pt-4 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-ink-soft">Explora VSM</p>
         <div class="p-2">
           {links.map((link) => (
-            <a class={`flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-sm font-bold transition-colors hover:bg-sand ${currentPath === link.href ? 'bg-sand text-blue' : 'text-ink'}`} href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>
+            <a class={`flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-sm font-bold transition-colors hover:bg-sand ${isCurrent(link.path) ? 'bg-sand text-blue' : 'text-ink'}`} href={sitePath(link.path)} aria-current={isCurrent(link.path) ? 'page' : undefined}>
               {link.label}
-              {currentPath === link.href && <span class="text-teal" aria-hidden="true">●</span>}
+              {isCurrent(link.path) && <span class="text-teal" aria-hidden="true">●</span>}
             </a>
           ))}
         </div>
         <div class="border-t border-line-soft p-2">
-          <a class="flex min-h-12 items-center justify-center rounded-xl bg-amber px-4 py-3 text-sm font-bold text-navy" href="/contacto">Hablemos <span aria-hidden="true" class="ml-2">↗</span></a>
+          <a class="flex min-h-12 items-center justify-center rounded-xl bg-amber px-4 py-3 text-sm font-bold text-navy" href={sitePath('/contacto')}>Hablemos <span aria-hidden="true" class="ml-2">↗</span></a>
           <a class="mt-2 flex min-h-12 items-center justify-center rounded-xl bg-navy px-4 py-3 text-sm font-bold text-white" href="tel:+56957216357">Llamar ahora</a>
         </div>
       </nav>

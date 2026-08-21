@@ -1,4 +1,5 @@
 ---
+import { sitePath } from '@/utils/paths';
 ---
 <section class="relative overflow-hidden bg-navy-deep py-20 text-white sm:py-24">
   <div class="grid-pattern absolute inset-0 opacity-50"></div>
@@ -19,7 +20,7 @@
       </p>
     </div>
     <div class="flex flex-wrap items-center gap-4 lg:justify-end">
-      <a href="/contacto" class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
+      <a href={sitePath('/contacto')} class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
         Contactar a VSM <span aria-hidden="true">↗</span>
       </a>
       <a href="https://wa.me/56957216357" target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10">
