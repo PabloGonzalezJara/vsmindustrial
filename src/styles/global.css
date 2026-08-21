@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  /* Marca */
+  --color-ink: #0a1b2e;
+  --color-ink-soft: #4a5d74;
+  --color-navy: #061628;
+  --color-navy-deep: #04101f;
+  --color-blue: #0b5da7;
+  --color-blue-dark: #08467e;
+  --color-blue-light: #1e7fcf;
+  --color-teal: #13a7a0;
+  --color-teal-soft: #2ec4b9;
+  --color-amber: #f5a524;
+  --color-steel: #6b7d92;
+  --color-sand: #f3f7fa;
+  --color-sand-warm: #f7f3ec;
+  --color-line: #d8e4ed;
+  --color-line-soft: #e8eef4;
+
+  /* Tipografía */
+  --font-sans: "Inter", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Trebuchet MS", "Segoe UI", sans-serif;
+
+  /* Forma */
+  --radius-panel: 1.25rem;
+  --radius-card: 1rem;
+  --shadow-panel: 0 1rem 3rem rgb(7 29 53 / 0.08);
+  --shadow-card: 0 0.5rem 1.5rem rgb(7 29 53 / 0.06);
+  --shadow-glow: 0 0 0 1px rgb(19 167 160 / 0.25), 0 1rem 3rem rgb(19 167 160 / 0.15);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-ink antialiased; font-family: var(--font-sans); }
+  ::selection { background: #13a7a0; color: white; }
+  :focus-visible { @apply outline-2 outline-offset-4 outline-teal; }
+  a, button, summary { @apply touch-manipulation; }
+  :target { scroll-margin-top: 6rem; }
+}
+
+@utility shell {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+}
+
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-teal;
+}
+
+@utility eyebrow-amber {
+  @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-amber;
+}
+
+@utility grid-pattern {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+
+@utility grid-pattern-light {
+  background-image:
+    linear-gradient(rgb(10 27 46 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(10 27 46 / 0.04) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+}
+
+@utility editorial-rule {
+  @apply border-t border-line;
+}
+
+@utility technical-grid {
+  background-image:
+    linear-gradient(rgb(11 93 167 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(11 93 167 / 0.08) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+@utility text-shadow-display {
+  text-shadow: 0 2px 20px rgb(0 0 0 / 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

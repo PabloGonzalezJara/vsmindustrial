@@ -1,0 +1,99 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/common/SectionHeading.astro';
+import ProductCard from '@/components/sections/productos/ProductCard.astro';
+import { products } from '@/data/products';
+---
+<BaseLayout
+  title="Productos"
+  description="Conoce las líneas de ventanas, estructuras de PVC y aluminio, termopaneles, cristales y cerramientos de VSM Industrial."
+>
+  <section class="relative overflow-hidden bg-navy-deep pb-24 pt-36 text-white sm:pb-32 sm:pt-44">
+    <div class="grid-pattern absolute inset-0 opacity-60"></div>
+    <div class="absolute -right-40 top-10 size-[28rem] rounded-full bg-blue/30 blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-20 size-[24rem] rounded-full bg-teal/20 blur-3xl"></div>
+
+    <div class="shell relative grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+      <div>
+        <span class="eyebrow">
+          <span class="size-1.5 rounded-full bg-teal"></span>
+          Catálogo VSM Industrial / 01
+        </span>
+        <h1 class="font-display mt-5 max-w-4xl text-5xl font-bold leading-[0.98] tracking-[-0.035em] text-shadow-display sm:text-7xl">
+          Soluciones para <span class="relative inline-block text-teal">
+            tus espacios.
+            <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M2 6 Q 50 1, 100 5 T 198 4" stroke="#f5a524" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+        <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+          Explora nuestras cinco líneas de productos para proyectos en PVC, aluminio, cristal y termopanel.
+        </p>
+      </div>
+      <div class="grid grid-cols-3 gap-3">
+        <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+          <p class="font-display text-3xl font-bold text-amber">05</p>
+          <p class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">líneas</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+          <p class="font-display text-3xl font-bold text-teal">PVC</p>
+          <p class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">y aluminio</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+          <p class="font-display text-3xl font-bold text-white">UBB</p>
+          <p class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">certificado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sand py-20 sm:py-28" aria-label="Catálogo de productos">
+    <div class="shell">
+      <div class="flex flex-col justify-between gap-8 border-b border-line pb-10 lg:flex-row lg:items-end">
+        <SectionHeading
+          eyebrow="Nuestros productos"
+          title="Fabricación e instalación especializada"
+          description="Cada línea responde a una necesidad distinta. Revisa sus características y conversemos sobre la solución adecuada para tu proyecto."
+        />
+        <a href="/contacto" class="inline-flex min-h-12 items-center gap-3 self-start rounded-full bg-amber px-6 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-lg hover:shadow-amber/30 sm:self-auto">
+          Consultar al equipo <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="mt-14 grid gap-6 md:grid-cols-2">
+        {products.map((product, index) => (
+          <div class={index === 0 ? 'md:col-span-2' : ''}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden bg-navy-deep py-20 text-white sm:py-24">
+    <div class="grid-pattern absolute inset-0 opacity-50"></div>
+    <div class="absolute -right-32 top-0 size-96 rounded-full bg-amber/20 blur-3xl"></div>
+    <div class="shell relative grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+      <div>
+        <span class="eyebrow-amber">
+          <span class="size-1.5 rounded-full bg-amber"></span>
+          Asesoría incluida
+        </span>
+        <h2 class="font-display mt-4 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
+          ¿No estás seguro de qué solución necesitas?
+        </h2>
+        <p class="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+          Cuéntanos tu proyecto y te guiamos con la mejor combinación de materiales y técnicas para tu espacio.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 lg:justify-end">
+        <a href="/contacto" class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
+          Pedir asesoría <span aria-hidden="true">↗</span>
+        </a>
+        <a href="https://wa.me/56957216357" target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10">
+          WhatsApp directo
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

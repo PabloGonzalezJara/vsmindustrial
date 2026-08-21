@@ -1,0 +1,76 @@
+---
+interface Props {
+  variant?: 'hero' | 'compact';
+}
+const { variant = 'hero' } = Astro.props;
+const isCompact = variant === 'compact';
+---
+<div class={`relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-blue-dark to-navy-deep p-8 text-white shadow-panel sm:p-10 ${isCompact ? '' : 'min-h-[26rem]'}`} aria-hidden="true">
+  <div class="grid-pattern absolute inset-0 opacity-60"></div>
+  <div class="absolute -right-12 -top-12 size-44 rounded-full bg-teal/20 blur-2xl"></div>
+
+  <!-- Top label -->
+  <div class="relative flex items-center justify-between text-[0.65rem] font-bold uppercase tracking-[0.22em] text-sky-200">
+    <span>VSM · 01</span>
+    <span class="flex items-center gap-2"><span class="size-1.5 rounded-full bg-amber"></span>Plano técnico</span>
+  </div>
+
+  <!-- Blueprint -->
+  <svg class="relative mx-auto mt-6 w-full max-w-md" viewBox="0 0 420 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="beamGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#2ec4b9"/>
+        <stop offset="1" stop-color="#13a7a0"/>
+      </linearGradient>
+    </defs>
+    <!-- ground -->
+    <line x1="20" y1="232" x2="400" y2="232" stroke="white" stroke-opacity=".35" stroke-width="1.5"/>
+    <line x1="20" y1="240" x2="400" y2="240" stroke="white" stroke-opacity=".15" stroke-width="1" stroke-dasharray="4 4"/>
+    <!-- beams -->
+    <g stroke="url(#beamGrad)" stroke-width="6" stroke-linecap="round">
+      <path d="M58 232V80"/>
+      <path d="M125 232V52"/>
+      <path d="M192 232V108"/>
+      <path d="M259 232V68"/>
+      <path d="M326 232V92"/>
+    </g>
+    <!-- beam tops -->
+    <g fill="#f5a524">
+      <rect x="52" y="74" width="12" height="8" rx="1"/>
+      <rect x="119" y="46" width="12" height="8" rx="1"/>
+      <rect x="186" y="102" width="12" height="8" rx="1"/>
+      <rect x="253" y="62" width="12" height="8" rx="1"/>
+      <rect x="320" y="86" width="12" height="8" rx="1"/>
+    </g>
+    <!-- connectors -->
+    <g stroke="#2ec4b9" stroke-width="2" stroke-dasharray="4 4" opacity=".7">
+      <line x1="64" y1="80" x2="320" y2="92"/>
+      <line x1="131" y1="52" x2="253" y2="68"/>
+    </g>
+    <!-- measurement dots -->
+    <g fill="#2ec4b9">
+      <circle cx="58" cy="232" r="5"/>
+      <circle cx="125" cy="232" r="5"/>
+      <circle cx="192" cy="232" r="5"/>
+      <circle cx="259" cy="232" r="5"/>
+      <circle cx="326" cy="232" r="5"/>
+    </g>
+    <!-- annotations -->
+    <g font-family="Space Grotesk, sans-serif" font-size="9" fill="#bae6fd" font-weight="700">
+      <text x="58" y="252" text-anchor="middle">A</text>
+      <text x="125" y="252" text-anchor="middle">B</text>
+      <text x="192" y="252" text-anchor="middle">C</text>
+      <text x="259" y="252" text-anchor="middle">D</text>
+      <text x="326" y="252" text-anchor="middle">E</text>
+    </g>
+  </svg>
+
+  <p class="relative mt-4 text-center text-xs font-bold uppercase tracking-[0.22em] text-sky-200">Ingeniería que mueve industria</p>
+
+  <!-- Bottom tags -->
+  <div class="relative mt-5 flex flex-wrap items-center justify-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-slate-300">
+    <span class="rounded-full border border-white/15 px-3 py-1">PVC</span>
+    <span class="rounded-full border border-white/15 px-3 py-1">Aluminio</span>
+    <span class="rounded-full border border-white/15 px-3 py-1">Termopanel</span>
+  </div>
+</div>

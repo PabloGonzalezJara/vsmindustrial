@@ -1,0 +1,22 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  align?: 'left' | 'center';
+  tone?: 'default' | 'invert';
+  accent?: 'teal' | 'amber';
+}
+const { eyebrow, title, description, align = 'left', tone = 'default', accent = 'teal' } = Astro.props;
+const eyebrowClass = accent === 'amber' ? 'eyebrow-amber' : 'eyebrow';
+const titleClass = tone === 'invert' ? 'text-white' : 'text-ink';
+const descClass = tone === 'invert' ? 'text-slate-300' : 'text-ink-soft';
+---
+<div class={align === 'center' ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
+  <p class={eyebrowClass}>
+    <span class={`size-1.5 rounded-full ${accent === 'amber' ? 'bg-amber' : 'bg-teal'}`}></span>
+    {eyebrow}
+  </p>
+  <h2 class={`font-display mt-5 text-3xl font-bold leading-[1.05] tracking-tight ${titleClass} sm:text-5xl`}>{title}</h2>
+  {description && <p class={`mt-5 text-lg leading-8 ${descClass}`}>{description}</p>}
+</div>

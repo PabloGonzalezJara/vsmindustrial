@@ -1,0 +1,82 @@
+---
+type Location = {
+  title: string;
+  city: string;
+  address?: string;
+  tag: string;
+  color: 'blue' | 'teal';
+  image: string;
+  imageAlt: string;
+  mapHref?: string;
+};
+const locations: Location[] = [
+  {
+    title: 'Presencia regional',
+    city: 'Curicó',
+    tag: 'Atención de proyectos',
+    color: 'blue',
+    image: '/images/contacto/curico-oficina.webp',
+    imageAlt: '',
+  },
+  {
+    title: 'Planta productiva',
+    city: 'Talca',
+    address: 'Calle de servicio 20 Oriente #45, Talca.',
+    tag: 'Fabricación e instalación',
+    color: 'teal',
+    image: '/images/contacto/talca-planta.webp',
+    imageAlt: 'Planta productiva de VSM Industrial en Talca con perfiles de aluminio',
+    mapHref: 'https://maps.google.com/?q=Calle+de+servicio+20+Oriente+45+Talca+Chile',
+  },
+];
+---
+<section class="relative bg-sand py-20 sm:py-28">
+  <div class="grid-pattern-light absolute inset-0 opacity-50"></div>
+  <div class="shell relative">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+      <div class="max-w-xl">
+        <p class="eyebrow">Dónde encontrarnos</p>
+        <h2 class="font-display mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-5xl">Presencia regional para tus proyectos.</h2>
+      </div>
+      <p class="max-w-sm text-base leading-7 text-ink-soft">
+        Atendemos proyectos en Curicó y Talca con fabricación local e instalación especializada.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {locations.map((loc) => {
+        return (
+          <article class="group relative overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-panel">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={loc.image}
+                alt={loc.imageAlt}
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/65 via-transparent to-transparent"></div>
+              <span class={`absolute top-4 left-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.18em] ring-1 ring-white/30 bg-white/15 text-white backdrop-blur-sm`}>
+                <span class={`size-1.5 rounded-full ${loc.color === 'teal' ? 'bg-teal' : 'bg-amber'}`}></span>
+                {loc.title}
+              </span>
+            </div>
+            <div class="p-7 sm:p-8">
+              <div class="flex items-end justify-between">
+                <h3 class="font-display text-3xl font-bold tracking-tight">{loc.city}</h3>
+                <span class="font-display text-5xl font-bold leading-none text-line-soft transition-colors group-hover:text-teal/20" aria-hidden="true">{loc.city.charAt(0)}</span>
+              </div>
+              <p class="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-ink-soft">{loc.tag}</p>
+              {loc.address && <p class="mt-5 leading-7 text-ink-soft">{loc.address}</p>}
+              {loc.mapHref && <a href={loc.mapHref} target="_blank" rel="noreferrer" class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-blue transition-colors hover:text-teal">
+                Ver en mapa <span aria-hidden="true">↗</span>
+              </a>}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>

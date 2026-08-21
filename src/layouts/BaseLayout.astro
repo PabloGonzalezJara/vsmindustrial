@@ -1,0 +1,40 @@
+---
+import Header from '@/components/navigation/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+import '@/styles/global.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#061628" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="VSM Industrial" />
+    <meta property="og:title" content={`${title} | VSM Industrial`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | VSM Industrial`} />
+    <meta name="twitter:description" content={description} />
+    <title>{title} | VSM Industrial</title>
+  </head>
+  <body class="bg-white text-ink">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-ink focus:shadow-panel">Saltar al contenido</a>
+    <Header />
+    <main id="contenido"><slot /></main>
+    <Footer />
+  </body>
+</html>

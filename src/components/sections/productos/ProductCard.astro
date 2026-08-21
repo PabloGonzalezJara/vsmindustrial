@@ -1,0 +1,53 @@
+---
+import type { Product } from '@/types/product';
+interface Props { product: Product; }
+const { product } = Astro.props;
+const palette = {
+  blue: { bg: 'bg-blue', ring: 'ring-blue/30', text: 'text-blue', tint: 'bg-blue/10' },
+  teal: { bg: 'bg-teal', ring: 'ring-teal/30', text: 'text-teal', tint: 'bg-teal/10' },
+  navy: { bg: 'bg-navy', ring: 'ring-navy/30', text: 'text-navy', tint: 'bg-navy/10' },
+}[product.accent];
+const imageSrc = product.image ?? '/images/productos/ventanas-termopanel-pvc.webp';
+const imageAlt = product.imageAlt ?? product.name;
+---
+<article class={`group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:${palette.ring} hover:shadow-panel`}>
+  <div class="relative aspect-[3/2] overflow-hidden bg-navy-deep">
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      width="1200"
+      height="800"
+      loading="lazy"
+      decoding="async"
+      class="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-navy-deep/15 to-transparent"></div>
+    <span class="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+      <span class="size-1.5 rounded-full bg-amber"></span>
+      {product.category}
+    </span>
+    <span class="absolute bottom-4 right-4 font-display text-2xl font-bold leading-none text-white/85 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+      VSM
+    </span>
+  </div>
+  <div class="flex flex-1 flex-col p-7 sm:p-8">
+    <h3 class="font-display text-2xl font-bold leading-tight tracking-tight text-ink">{product.name}</h3>
+    <p class="mt-3 leading-7 text-ink-soft">{product.description}</p>
+    <ul class="mt-6 grid gap-2.5 text-sm text-ink-soft">
+      {product.features.map((feature) => (
+        <li class="flex items-start gap-3">
+          <span class={`mt-0.5 grid size-5 shrink-0 place-items-center rounded-full ${palette.tint} ${palette.text}`}>
+            <svg class="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>
+          </span>
+          {feature}
+        </li>
+      ))}
+    </ul>
+    <div class="mt-8 flex items-center justify-between border-t border-line-soft pt-5">
+      <a href="/contacto" class="inline-flex min-h-11 items-center gap-2 text-sm font-bold text-blue transition-colors hover:text-teal">
+        Consultar solución <span aria-hidden="true">↗</span>
+      </a>
+      <span class="font-display text-2xl font-bold leading-none text-line-soft transition-colors group-hover:text-teal/20" aria-hidden="true">→</span>
+    </div>
+  </div>
+</article>

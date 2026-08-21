@@ -1,0 +1,76 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/common/SectionHeading.astro';
+import ContactDetails from '@/components/sections/contacto/ContactDetails.astro';
+---
+<BaseLayout
+  title="Contacto"
+  description="Contacta directamente a VSM Industrial en Talca por teléfono, correo electrónico, WhatsApp o Instagram."
+>
+  <section class="relative overflow-hidden bg-navy-deep pb-24 pt-36 text-white sm:pb-32 sm:pt-44">
+    <div class="grid-pattern absolute inset-0 opacity-60"></div>
+    <div class="absolute -right-40 top-10 size-[28rem] rounded-full bg-blue/30 blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-20 size-[24rem] rounded-full bg-teal/20 blur-3xl"></div>
+
+    <div class="shell relative grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+      <div>
+        <span class="eyebrow">
+          <span class="size-1.5 rounded-full bg-teal"></span>
+          Contacto directo / 02
+        </span>
+        <h1 class="font-display mt-5 max-w-3xl text-5xl font-bold leading-[0.98] tracking-[-0.035em] text-shadow-display sm:text-7xl">
+          Estamos listos para <span class="relative inline-block text-teal">
+            ayudarte.
+            <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M2 6 Q 50 1, 100 5 T 198 4" stroke="#f5a524" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+        <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+          Contáctanos directamente para conocer nuestras soluciones de ventanas, termopaneles y estructuras.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+          <p class="font-display text-3xl font-bold text-amber">24h</p>
+          <p class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">respuesta</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+          <p class="font-display text-3xl font-bold text-teal">1</p>
+          <p class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">planta productiva</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative bg-sand py-20 sm:py-28">
+    <div class="grid-pattern-light absolute inset-0 opacity-50"></div>
+    <div class="shell relative max-w-5xl">
+      <SectionHeading
+        eyebrow="Elige tu canal"
+        title="Conversemos sobre tu proyecto."
+        description="Elige el canal que te resulte más cómodo. Nuestro equipo te orientará directamente."
+      />
+      <div class="mt-8">
+        <ContactDetails />
+      </div>
+      <article class="group relative mt-4 overflow-hidden rounded-2xl border border-line bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-panel sm:max-w-[calc(50%-0.5rem)]">
+        <span class="absolute inset-x-0 top-0 h-1 bg-teal opacity-0 transition-opacity group-hover:opacity-100"></span>
+        <div class="flex items-center justify-between">
+          <p class="eyebrow">Ubicación</p>
+          <span class="grid size-10 place-items-center rounded-full bg-teal/10 text-teal transition-colors group-hover:bg-teal group-hover:text-white" aria-hidden="true">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </span>
+        </div>
+        <h2 class="font-display mt-4 text-xl font-bold text-ink">Talca</h2>
+        <address class="mt-2 text-sm leading-6 text-ink-soft not-italic">Calle de servicio 20 Oriente, #45, Talca.</address>
+        <a href="https://maps.google.com/?q=Calle+de+servicio+20+Oriente+45+Talca+Chile" target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-teal transition-colors hover:text-blue">
+          Abrir en Maps <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

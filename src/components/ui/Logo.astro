@@ -1,0 +1,25 @@
+---
+interface Props {
+  variant?: 'dark' | 'light';
+  withWordmark?: boolean;
+}
+const { variant = 'light', withWordmark = true } = Astro.props;
+const isLight = variant === 'light';
+const markBg = isLight ? 'bg-teal' : 'bg-white';
+const markText = isLight ? 'text-white' : 'text-navy';
+const wordmark = isLight ? 'text-white' : 'text-ink';
+const sub = isLight ? 'text-sky-200' : 'text-ink-soft';
+const ring = isLight ? 'ring-1 ring-white/15' : 'ring-1 ring-line';
+---
+<a href="/" class="group inline-flex items-center gap-3" aria-label="VSM Industrial, inicio">
+  <span class={`relative grid size-11 place-items-center overflow-hidden rounded-xl ${markBg} ${markText} font-black shadow-lg shadow-navy/20 ring-1 transition-transform duration-300 group-hover:rotate-[-4deg] ${ring}`}>
+    <span class="font-display text-[1.4rem] leading-none">V</span>
+    <span class="absolute -bottom-1 -right-1 size-3 rounded-tl-md bg-amber"></span>
+  </span>
+  {withWordmark && (
+    <span class="leading-none">
+      <strong class={`block font-display text-lg font-bold tracking-tight ${wordmark}`}>VSM Industrial</strong>
+      <small class={`mt-1 block text-[0.6rem] font-bold uppercase tracking-[0.24em] ${sub}`}>Ventanas · PVC · Aluminio</small>
+    </span>
+  )}
+</a>

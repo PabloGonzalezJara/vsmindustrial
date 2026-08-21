@@ -1,0 +1,105 @@
+---
+const stats = [
+  { value: '5+', label: 'años en el mercado' },
+  { value: 'PVC', label: 'y aluminio' },
+  { value: '2', label: 'ciudades de atención' },
+  { value: 'UBB', label: 'calidad certificada', accent: true },
+];
+---
+<section class="relative overflow-hidden bg-navy-deep pt-32 text-white sm:pt-40">
+  <!-- Background layers -->
+  <div class="grid-pattern absolute inset-0 opacity-60"></div>
+  <div class="absolute -right-40 top-10 size-[28rem] rounded-full bg-blue/30 blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-20 size-[24rem] rounded-full bg-teal/20 blur-3xl"></div>
+  <div aria-hidden="true" class="absolute inset-y-0 left-1/2 hidden w-px bg-gradient-to-b from-transparent via-white/10 to-transparent lg:block"></div>
+
+  <div class="shell relative grid items-center gap-14 pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:pb-28">
+    <div class="max-w-2xl">
+      <!-- Badges -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/10 px-3 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-teal">
+          <span class="size-1.5 rounded-full bg-teal"></span>
+          Fabricación e instalación
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-amber">
+          <span class="size-1.5 rounded-full bg-amber"></span>
+          Certificado UBB
+        </span>
+      </div>
+
+      <h1 class="font-display mt-7 text-5xl font-bold leading-[0.96] tracking-[-0.035em] text-shadow-display sm:text-7xl">
+        Ventanas que hacen que tus <span class="relative inline-block text-teal">
+          espacios rindan
+          <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 6 Q 50 1, 100 5 T 198 4" stroke="#f5a524" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span> mejor.
+      </h1>
+
+      <p class="mt-7 max-w-xl text-lg leading-8 text-slate-200">
+        Somos especialistas en ventanas termopanel, estructuras de aluminio y PVC para proyectos residenciales y comerciales en Curicó y Talca.
+      </p>
+
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="/productos" class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-6 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-lg hover:shadow-amber/30">
+          Explorar catálogo <span aria-hidden="true">↗</span>
+        </a>
+        <a href="/quienes-somos" class="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10">
+          Conocer VSM
+        </a>
+      </div>
+
+      <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-6 text-sm text-slate-300">
+        <span class="font-bold text-white">¿Ya tienes un proyecto?</span>
+        <a class="group inline-flex items-center gap-2 font-bold text-teal hover:text-teal-soft" href="/contacto">
+          Hablemos directamente
+          <span class="grid size-7 place-items-center rounded-full bg-teal/15 transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <!-- Hero image with frame -->
+      <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-navy-deep shadow-panel">
+        <img
+          src="/images/home/hero-industrial.webp"
+          alt="Fachada industrial moderna con muro cortina de aluminio y cristal al atardecer"
+          width="1600"
+          height="1000"
+          loading="eager"
+          decoding="async"
+          class="aspect-[4/3] w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-tr from-navy-deep/65 via-transparent to-amber/10 mix-blend-multiply"></div>
+        <div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2rem] pointer-events-none"></div>
+      </div>
+      <!-- Floating info cards -->
+      <div class="absolute -left-4 top-6 hidden items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md sm:flex" aria-hidden="true">
+        <span class="grid size-9 place-items-center rounded-full bg-teal/20 text-teal">⚡</span>
+        <div class="leading-tight">
+          <p class="text-[0.65rem] font-bold uppercase tracking-wider text-slate-400">Eficiencia</p>
+          <p class="text-sm font-bold">Termopanel</p>
+        </div>
+      </div>
+      <div class="absolute -right-3 bottom-10 hidden items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md sm:flex" aria-hidden="true">
+        <span class="grid size-9 place-items-center rounded-full bg-amber/20 text-amber">��</span>
+        <div class="leading-tight">
+          <p class="text-[0.65rem] font-bold uppercase tracking-wider text-slate-400">Respaldo</p>
+          <p class="text-sm font-bold">Certificación UBB</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="relative border-y border-white/10 bg-white/[0.02] backdrop-blur-sm">
+    <div class="shell grid grid-cols-2 gap-6 py-7 sm:grid-cols-4">
+      {stats.map((stat) => (
+        <div class="border-l border-white/10 pl-5 first:border-l-0 first:pl-0">
+          <p class={`font-display text-3xl font-bold tracking-tight sm:text-4xl ${stat.accent ? 'text-amber' : 'text-white'}`}>{stat.value}</p>
+          <p class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

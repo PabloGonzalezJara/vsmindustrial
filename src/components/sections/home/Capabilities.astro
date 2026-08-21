@@ -1,0 +1,55 @@
+---
+import SectionHeading from '@/components/common/SectionHeading.astro';
+const capabilities = [
+  {
+    number: '01',
+    title: 'Eficiencia energética',
+    text: 'Ventanas termopanel diseñadas para mejorar el desempeño energético de hogares y negocios.',
+    icon: 'M4 12h6m4 0h6M10 8v8m4-8v8',
+  },
+  {
+    number: '02',
+    title: 'Calidad y durabilidad',
+    text: 'Fabricamos ventanas y estructuras de PVC y aluminio con foco en rendimiento y larga vida útil.',
+    icon: 'M12 3l8 4v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z',
+  },
+  {
+    number: '03',
+    title: 'Respaldo certificado',
+    text: 'Nuestros productos cuentan con certificación de calidad de la Universidad del Bío-Bío.',
+    icon: 'M12 2l2.5 5 5.5.8-4 3.9 1 5.5L12 14.8 7 17.2l1-5.5-4-3.9 5.5-.8L12 2z',
+  },
+];
+---
+<section class="bg-white py-20 sm:py-28">
+  <div class="shell">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+      <SectionHeading eyebrow="VSM Industrial" title="Soluciones que combinan desempeño y confianza." description="Fabricamos e instalamos soluciones para mejorar los espacios, con atención local en Curicó y Talca." />
+      <p class="max-w-xs text-sm leading-6 text-ink-soft">
+        <span class="font-display text-3xl font-bold text-ink">+05</span>
+        <span class="ml-2">años mejorando proyectos en la región del Maule.</span>
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      {capabilities.map((item, idx) => (
+        <article class="group relative overflow-hidden rounded-2xl border border-line bg-white p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-panel sm:p-10">
+          <span aria-hidden="true" class={`absolute inset-x-0 top-0 h-1 ${idx === 1 ? 'bg-amber' : 'bg-teal'}`}></span>
+          <div class="flex items-start justify-between">
+            <span class={`grid size-12 place-items-center rounded-xl ${idx === 1 ? 'bg-amber/10 text-amber' : 'bg-teal/10 text-teal'}`}>
+              <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d={item.icon}/>
+              </svg>
+            </span>
+            <span class="font-display text-5xl font-bold leading-none text-line-soft transition-colors group-hover:text-teal/20">{item.number}</span>
+          </div>
+          <h3 class="font-display mt-6 text-2xl font-bold leading-tight tracking-tight text-ink">{item.title}</h3>
+          <p class="mt-3 leading-7 text-ink-soft">{item.text}</p>
+          <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-teal opacity-0 transition-opacity group-hover:opacity-100">
+            Conocer más <span aria-hidden="true">→</span>
+          </span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

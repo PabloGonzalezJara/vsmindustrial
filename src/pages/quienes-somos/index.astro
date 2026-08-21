@@ -1,0 +1,162 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/common/SectionHeading.astro';
+const companyProfile = [
+  {
+    number: '01',
+    title: 'Nuestra Historia',
+    paragraphs: [
+      'VSM Industrial nació para transformar el mercado de ventanas y estructuras. Con calidad e innovación, nos consolidamos como especialistas en ventanas, termopaneles y estructuras de aluminio y PVC.',
+      'Nuestros valores de lealtad, dedicación y confiabilidad se reflejan en nuestros productos y servicios. Hoy, seguimos enfocados en la excelencia y en satisfacer a nuestros clientes.',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Misión',
+    paragraphs: [
+      'Proveer soluciones de alta calidad en ventanas, termopaneles y estructuras de aluminio y PVC, basándonos en nuestros valores de lealtad, dedicación y confiabilidad.',
+      'Nos comprometemos a ofrecer un servicio excepcional, garantizando la satisfacción y confianza de nuestros clientes a través de la mejora continua y el trabajo en equipo.',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Visión',
+    paragraphs: [
+      'Ser líderes en la fabricación de ventanas, termopaneles y estructuras de aluminio y PVC, reconocidos por nuestra calidad, innovación y compromiso, mejorando continuamente para satisfacer las necesidades de nuestros clientes.',
+    ],
+  },
+];
+const team = [
+  {
+    name: 'Rodrigo Yévenes',
+    role: 'Gerente de Administración y Finanzas',
+    image: '/images/quienes-somos/rodrigo-yevenes.webp',
+    alt: 'Retrato de Rodrigo Yévenes, Gerente de Administración y Finanzas de VSM Industrial.',
+  },
+  {
+    name: 'Héctor Cerda',
+    role: 'Subgerente de Producción / Jefe de Operaciones',
+    image: '/images/quienes-somos/hector-cerda.webp',
+    alt: 'Retrato de Héctor Cerda, Subgerente de Producción y Jefe de Operaciones de VSM Industrial.',
+  },
+  {
+    name: 'Mario Aliste',
+    role: 'Contador Auditor',
+    image: '/images/quienes-somos/mario-aliste.webp',
+    alt: 'Retrato de Mario Aliste, Contador Auditor de VSM Industrial.',
+  },
+  {
+    name: 'Cristóbal Cerda',
+    role: 'Asistente Administrativo',
+    image: '/images/quienes-somos/cristobal-cerda.webp',
+    alt: 'Retrato de Cristóbal Cerda, Asistente Administrativo de VSM Industrial.',
+  },
+];
+---
+<BaseLayout
+  title="Quiénes somos"
+  description="Conoce la historia, misión, visión, valores y equipo de VSM Industrial, empresa con más de 5 años en el mercado."
+>
+  <section class="relative overflow-hidden bg-navy-deep pb-24 pt-36 text-white sm:pb-32 sm:pt-44">
+    <div class="grid-pattern absolute inset-0 opacity-60"></div>
+    <div class="absolute -right-40 top-10 size-[28rem] rounded-full bg-blue/30 blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-20 size-[24rem] rounded-full bg-teal/20 blur-3xl"></div>
+
+    <div class="shell relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+      <div>
+        <span class="eyebrow">
+          <span class="size-1.5 rounded-full bg-teal"></span>
+          Quiénes somos / 03
+        </span>
+        <h1 class="font-display mt-5 max-w-3xl text-5xl font-bold leading-[0.98] tracking-[-0.035em] text-shadow-display sm:text-7xl">
+          Más de cinco años construyendo <span class="relative inline-block text-teal">
+            soluciones confiables.
+            <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M2 6 Q 50 1, 100 5 T 198 4" stroke="#f5a524" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+      </div>
+      <p class="max-w-md text-lg leading-8 text-slate-300">
+        Fabricamos ventanas, estructuras de PVC y aluminio y termopaneles de alta calidad para tus proyectos.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 sm:py-28">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="Quiénes somos"
+        title="Nuestra historia, misión y visión"
+        description="Conocemos la industria, trabajamos con compromiso y buscamos mejorar cada proyecto."
+        align="center"
+      />
+      <div class="mx-auto mt-10 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {companyProfile.map(({ number, title, paragraphs }) => (
+          <article class="group relative overflow-hidden rounded-2xl border border-line bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-panel">
+            <span class="absolute inset-x-0 top-0 h-1 bg-teal"></span>
+            <p class="font-display text-3xl font-bold text-line-soft transition-colors group-hover:text-teal/30">{number}</p>
+            <h3 class="font-display mt-6 text-xl font-bold tracking-tight text-ink">{title}</h3>
+            <div class="mt-3 space-y-4 text-sm leading-6 text-ink-soft">
+              {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 sm:py-28">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="Nuestro equipo"
+        title="Personas que hacen posible cada proyecto"
+        description="En VSM Industrial valoramos el intercambio de ideas y conocimientos. Nuestra labor es dinámica, desafiante y orientada a la mejora continua."
+      />
+      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {team.map(({ name, role, image, alt }, idx) => (
+          <article class={`group relative overflow-hidden rounded-2xl border border-line bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-panel`}>
+            <img
+              src={image}
+              alt={alt}
+              width="240"
+              height="320"
+              loading="lazy"
+              class="w-full rounded-xl bg-sand object-cover"
+            />
+            <p class="font-display mt-5 text-lg font-bold leading-tight tracking-tight text-ink">{name}</p>
+            <p class="mt-2 text-sm leading-6 text-ink-soft">{role}</p>
+            <span class="absolute bottom-4 right-4 font-display text-3xl font-bold leading-none text-line-soft transition-colors group-hover:text-teal/20" aria-hidden="true">0{idx + 1}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden bg-navy-deep py-20 text-white sm:py-24">
+    <div class="grid-pattern absolute inset-0 opacity-50"></div>
+    <div class="absolute -right-32 top-0 size-96 rounded-full bg-amber/20 blur-3xl"></div>
+    <div class="shell relative grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+      <div>
+        <span class="eyebrow-amber">
+          <span class="size-1.5 rounded-full bg-amber"></span>
+          ¿Conversamos?
+        </span>
+        <h2 class="font-display mt-4 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
+          Conoce a quienes <span class="text-amber">fabrican tus ventanas.</span>
+        </h2>
+        <p class="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+          Te invitamos a recorrer nuestra planta y showroom para entender cada etapa de la fabricación.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 lg:justify-end">
+        <a href="/contacto" class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
+          Agendar visita <span aria-hidden="true">↗</span>
+        </a>
+        <a href="/productos" class="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10">
+          Ver productos
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

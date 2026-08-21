@@ -1,0 +1,56 @@
+---
+const channels = [
+  {
+    href: 'tel:+56957216357',
+    eyebrow: 'Llámanos',
+    title: '+56 9 5721 6357',
+    description: 'Contacto directo con nuestro equipo.',
+    icon: 'M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z',
+    external: false,
+  },
+  {
+    href: 'mailto:comunicaciones@grupovsm.cl',
+    eyebrow: 'Escríbenos',
+    title: 'comunicaciones@grupovsm.cl',
+    description: 'Te respondemos en menos de 24 h hábiles.',
+    icon: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 6l-10 7L2 6',
+    external: false,
+  },
+  {
+    href: 'https://wa.me/56957216357',
+    eyebrow: 'WhatsApp',
+    title: 'Conversar con un asesor',
+    description: 'Respuesta inmediata en horario comercial.',
+    icon: 'M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z',
+    external: true,
+  },
+  {
+    href: 'https://www.instagram.com/vimalchile/',
+    eyebrow: 'Instagram',
+    title: '@vimalchile',
+    description: 'Conoce nuestros proyectos y últimas obras.',
+    icon: 'M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4zM12 15a3 3 0 110-6 3 3 0 010 6zm4.5-7.5a1 1 0 11-2 0 1 1 0 012 0z',
+    external: true,
+  },
+];
+---
+<div class="grid gap-4 sm:grid-cols-2">
+  {channels.map((c) => (
+    <a class="group relative overflow-hidden rounded-2xl border border-line bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-panel" href={c.href} target={c.external ? '_blank' : undefined} rel={c.external ? 'noreferrer' : undefined}>
+      <span class="absolute inset-x-0 top-0 h-1 bg-teal opacity-0 transition-opacity group-hover:opacity-100"></span>
+      <div class="flex items-center justify-between">
+        <p class="eyebrow">{c.eyebrow}</p>
+        <span class="grid size-10 place-items-center rounded-full bg-teal/10 text-teal transition-colors group-hover:bg-teal group-hover:text-white">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d={c.icon}/>
+          </svg>
+        </span>
+      </div>
+      <p class="font-display mt-4 break-words text-xl font-bold text-ink transition-colors group-hover:text-blue">{c.title}</p>
+      <p class="mt-2 text-sm text-ink-soft">{c.description}</p>
+      <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-teal opacity-0 transition-opacity group-hover:opacity-100">
+        Abrir <span aria-hidden="true">→</span>
+      </span>
+    </a>
+  ))}
+</div>
