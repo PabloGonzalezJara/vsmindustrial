@@ -4,6 +4,9 @@ import SectionHeading from '@/components/common/SectionHeading.astro';
 import ProductCard from '@/components/sections/productos/ProductCard.astro';
 import { products } from '@/data/products';
 import { sitePath } from '@/utils/paths';
+
+const termopanelProducts = products.filter((product) => product.group === 'Termopanel');
+const standaloneProducts = products.filter((product) => product.group === undefined);
 ---
 <BaseLayout
   title="Productos"
@@ -24,17 +27,17 @@ import { sitePath } from '@/utils/paths';
           Soluciones para <span class="relative inline-block text-teal">
             tus espacios.
             <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M2 6 Q 50 1, 100 5 T 198 4" stroke="#f5a524" stroke-width="3" stroke-linecap="round"/>
+              <path d="M2 6 Q 50 1, 100 5 T 198 4" stroke="#1d8eea" stroke-width="3" stroke-linecap="round"/>
             </svg>
           </span>
         </h1>
         <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-          Explora nuestras cinco líneas de productos para proyectos en PVC, aluminio, cristal y termopanel.
+          Explora nuestras seis líneas: Termopanel PVC y aluminio, mamparas, puertas de cristal, muros cortinas, cierres de terrazas y divisiones para oficinas.
         </p>
       </div>
       <div class="grid grid-cols-3 gap-3">
         <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
-          <p class="font-display text-3xl font-bold text-amber">05</p>
+          <p class="font-display text-3xl font-bold text-amber">06</p>
           <p class="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">líneas</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
@@ -57,16 +60,26 @@ import { sitePath } from '@/utils/paths';
           title="Fabricación e instalación especializada"
           description="Cada línea responde a una necesidad distinta. Revisa sus características y conversemos sobre la solución adecuada para tu proyecto."
         />
-        <a href={sitePath('/contacto')} class="inline-flex min-h-12 items-center gap-3 self-start rounded-full bg-amber px-6 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-lg hover:shadow-amber/30 sm:self-auto">
+        <a href={sitePath('/contacto')} class="inline-flex min-h-12 items-center gap-3 self-start rounded-full bg-amber px-6 text-sm font-bold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-lg hover:shadow-amber/30 sm:self-auto">
           Consultar al equipo <span aria-hidden="true">↗</span>
         </a>
       </div>
-      <div class="mt-14 grid gap-6 md:grid-cols-2">
-        {products.map((product, index) => (
-          <div class={index === 0 ? 'md:col-span-2' : ''}>
-            <ProductCard product={product} />
+      <div class="mt-14 space-y-14">
+        <section aria-labelledby="termopanel-heading">
+          <h2 id="termopanel-heading" class="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            Termopanel
+          </h2>
+          <div class="mt-6 grid gap-6 md:grid-cols-2">
+            {termopanelProducts.map((product) => (
+              <ProductCard product={product} />
+            ))}
           </div>
-        ))}
+        </section>
+        <div class="grid gap-6 md:grid-cols-2">
+          {standaloneProducts.map((product) => (
+            <ProductCard product={product} />
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -88,10 +101,10 @@ import { sitePath } from '@/utils/paths';
         </p>
       </div>
       <div class="flex flex-wrap items-center gap-4 lg:justify-end">
-        <a href={sitePath('/contacto')} class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-navy transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
+        <a href={sitePath('/contacto')} class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-7 text-sm font-bold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
           Pedir asesoría <span aria-hidden="true">↗</span>
         </a>
-        <a href="https://wa.me/56957216357" target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/30 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white/10">
+        <a href="https://wa.me/56957216357" target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center gap-3 rounded-full bg-amber px-6 text-sm font-bold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-amber/90 hover:shadow-xl hover:shadow-amber/20">
           WhatsApp directo
         </a>
       </div>

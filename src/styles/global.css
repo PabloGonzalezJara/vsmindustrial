@@ -5,13 +5,13 @@
   --color-ink: #0a1b2e;
   --color-ink-soft: #4a5d74;
   --color-navy: #061628;
-  --color-navy-deep: #04101f;
-  --color-blue: #0b5da7;
+  --color-navy-deep: #111b4f;
+  --color-blue: #004C98;
   --color-blue-dark: #08467e;
   --color-blue-light: #1e7fcf;
   --color-teal: #13a7a0;
   --color-teal-soft: #2ec4b9;
-  --color-amber: #f5a524;
+  --color-amber: #1d8eea;
   --color-steel: #6b7d92;
   --color-sand: #f3f7fa;
   --color-sand-warm: #f7f3ec;
@@ -71,8 +71,8 @@
 
 @utility technical-grid {
   background-image:
-    linear-gradient(rgb(11 93 167 / 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(11 93 167 / 0.08) 1px, transparent 1px);
+    linear-gradient(rgb(0 76 152 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0 76 152 / 0.08) 1px, transparent 1px);
   background-size: 4rem 4rem;
 }
 

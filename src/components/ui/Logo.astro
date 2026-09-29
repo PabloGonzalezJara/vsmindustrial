@@ -1,26 +1,22 @@
 ---
-import { sitePath } from '@/utils/paths';
+import { assetPath, sitePath } from '@/utils/paths';
+
 interface Props {
   variant?: 'dark' | 'light';
-  withWordmark?: boolean;
 }
-const { variant = 'light', withWordmark = true } = Astro.props;
-const isLight = variant === 'light';
-const markBg = isLight ? 'bg-teal' : 'bg-white';
-const markText = isLight ? 'text-white' : 'text-navy';
-const wordmark = isLight ? 'text-white' : 'text-ink';
-const sub = isLight ? 'text-sky-200' : 'text-ink-soft';
-const ring = isLight ? 'ring-1 ring-white/15' : 'ring-1 ring-line';
+
+const { variant = 'light' } = Astro.props;
+const logoAsset = variant === 'light'
+  ? 'images/branding/vsm-industrial-logo-white.webp'
+  : 'images/branding/vsm-industrial-logo.webp';
 ---
-<a href={sitePath('/')} class="group inline-flex items-center gap-3" aria-label="VSM Industrial, inicio">
-  <span class={`relative grid size-11 place-items-center overflow-hidden rounded-xl ${markBg} ${markText} font-black shadow-lg shadow-navy/20 ring-1 transition-transform duration-300 group-hover:rotate-[-4deg] ${ring}`}>
-    <span class="font-display text-[1.4rem] leading-none">V</span>
-    <span class="absolute -bottom-1 -right-1 size-3 rounded-tl-md bg-amber"></span>
-  </span>
-  {withWordmark && (
-    <span class="leading-none">
-      <strong class={`block font-display text-lg font-bold tracking-tight ${wordmark}`}>VSM Industrial</strong>
-      <small class={`mt-1 block text-[0.6rem] font-bold uppercase tracking-[0.24em] ${sub}`}>Ventanas · PVC · Aluminio</small>
-    </span>
-  )}
+<a href={sitePath('/')} class="group inline-flex items-center" aria-label="VSM Industrial, inicio">
+  <img
+    src={assetPath(logoAsset)}
+    alt=""
+    aria-hidden="true"
+    width="2667"
+    height="954"
+    class="aspect-[2667/954] h-10 w-auto max-w-[min(12rem,40vw)] object-contain transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none sm:h-12 sm:max-w-60"
+  />
 </a>

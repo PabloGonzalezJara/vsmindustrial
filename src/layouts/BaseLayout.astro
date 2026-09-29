@@ -1,5 +1,6 @@
 ---
 import Header from '@/components/navigation/Header.astro';
+import FloatingContactBar from '@/components/navigation/FloatingContactBar.astro';
 import Footer from '@/components/layout/Footer.astro';
 import '@/styles/global.css';
 interface Props { title: string; description: string; }
@@ -34,6 +35,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <body class="bg-white text-ink">
     <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-ink focus:shadow-panel">Saltar al contenido</a>
     <Header />
+    <FloatingContactBar />
     <main id="contenido"><slot /></main>
     <Footer />
   </body>

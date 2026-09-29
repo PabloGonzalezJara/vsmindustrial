@@ -3,35 +3,25 @@ import SectionHeading from '@/components/common/SectionHeading.astro';
 import ProductCard from '@/components/sections/productos/ProductCard.astro';
 import { products } from '@/data/products';
 import { sitePath } from '@/utils/paths';
+
+const featuredProducts = products.filter((product) => product.group === 'Termopanel');
 ---
 <section class="relative bg-sand-warm py-20 sm:py-28">
   <div class="grid-pattern-light absolute inset-0 opacity-40"></div>
   <div class="shell relative">
     <div class="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
       <SectionHeading
-        eyebrow="Soluciones destacadas"
-        title="Empieza por la solución que necesitas"
-        description="Cinco líneas para resolver ventanas, fachadas, cristales y divisiones con fabricación e instalación especializada."
+        eyebrow="Productos destacados"
+        title="Ventanas termopanel de PVC y aluminio"
+        description="Fabricamos e instalamos ventanas termopanel de PVC y aluminio para proyectos residenciales y comerciales."
       />
       <a href={sitePath('/productos')} class="inline-flex min-h-12 items-center gap-3 self-start rounded-full border border-ink bg-ink px-6 text-sm font-bold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-navy sm:self-auto">
-        Ver las cinco líneas <span aria-hidden="true">↗</span>
+        Ver todos los productos <span aria-hidden="true">↗</span>
       </a>
     </div>
 
-    <div class="mt-12 grid gap-5 md:grid-cols-3">
-      {products.slice(0, 3).map((product) => <ProductCard product={product} />)}
-    </div>
-
-    <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 rounded-2xl border border-line bg-white/60 p-6 backdrop-blur-sm">
-      <span class="text-xs font-bold uppercase tracking-[0.22em] text-ink-soft">También:</span>
-      <div class="flex flex-wrap gap-2">
-        {products.slice(3).map((product) => (
-          <a class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-bold text-ink transition-colors hover:border-teal hover:text-teal" href={sitePath('/productos')}>
-            {product.category}
-            <span aria-hidden="true">→</span>
-          </a>
-        ))}
-      </div>
+    <div class="mt-12 grid gap-5 md:grid-cols-2">
+      {featuredProducts.map((product) => <ProductCard product={product} />)}
     </div>
   </div>
 </section>
