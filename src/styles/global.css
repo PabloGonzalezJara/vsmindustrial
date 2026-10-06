@@ -19,8 +19,8 @@
   --color-line-soft: #e8eef4;
 
   /* Tipografía */
-  --font-sans: "Inter", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
-  --font-display: "Space Grotesk", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-sans: "Manrope", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Manrope", "Trebuchet MS", "Segoe UI", sans-serif;
 
   /* Forma */
   --radius-panel: 1.25rem;

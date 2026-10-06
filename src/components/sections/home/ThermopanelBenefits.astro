@@ -1,0 +1,85 @@
+---
+import { assetPath } from '@/utils/paths';
+
+const benefits = [
+  {
+    title: 'Aislación térmica',
+    description: 'Ayuda a mantener una temperatura más estable y confortable durante todo el año.',
+    icon: ['M14 14.76V5a2 2 0 0 0-4 0v9.76a4 4 0 1 0 4 0Z', 'M12 11v5'],
+  },
+  {
+    title: 'Aislación acústica',
+    description: 'Reduce el ruido exterior para disfrutar espacios más tranquilos y agradables.',
+    icon: ['M11 5 6 9H3v6h3l5 4V5Z', 'M15.54 8.46a5 5 0 0 1 0 7.07', 'M19.07 4.93a10 10 0 0 1 0 14.14'],
+  },
+  {
+    title: 'Eficiencia energética',
+    description: 'Disminuye la pérdida de energía y optimiza el uso de la climatización.',
+    icon: ['m13 2-3 8h7l-6 12 1-9H6l7-11Z'],
+  },
+  {
+    title: 'Mayor seguridad',
+    description: 'Su estructura ofrece mayor resistencia y protección para tus espacios.',
+    icon: ['M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z', 'm9 12 2 2 4-4'],
+  },
+  {
+    title: 'Menor condensación',
+    description: 'Reduce la humedad interior y contribuye a mantener ambientes más saludables.',
+    icon: ['M12 22a7 7 0 0 0 7-7c0-4-7-13-7-13S5 11 5 15a7 7 0 0 0 7 7Z', 'M9 16a3 3 0 0 0 3 3'],
+  },
+  {
+    title: 'Control solar',
+    description: 'Reduce el calor solar para lograr espacios más frescos y confortables.',
+    icon: ['M12 3v2', 'M12 19v2', 'M5.64 5.64l1.42 1.42', 'm16.94 16.94 1.42 1.42', 'M3 12h2', 'M19 12h2', 'm5.64 18.36 1.42-1.42', 'm16.94 7.06 1.42-1.42', 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z'],
+  },
+];
+---
+<section class="relative isolate overflow-hidden bg-white py-20 sm:py-28" aria-labelledby="thermopanel-benefits-title">
+  <div class="grid-pattern-light pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
+  <div class="absolute -right-24 top-10 size-72 rounded-full bg-blue/5 blur-3xl" aria-hidden="true"></div>
+
+  <div class="shell relative">
+    <div class="max-w-4xl">
+      <p class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-teal">
+        <span class="h-px w-8 bg-teal" aria-hidden="true"></span>
+        Termopanel de doble vidriado hermético
+      </p>
+      <h2 id="thermopanel-benefits-title" class="font-display mt-5 text-3xl font-bold uppercase leading-[1.06] tracking-[-0.035em] text-ink sm:text-5xl lg:text-6xl">
+        Termopanel DVH: <span class="text-blue">más confort y eficiencia</span> para tus espacios
+      </h2>
+      <p class="mt-5 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
+        Soluciones en vidrio hermético para proyectos residenciales y comerciales.
+      </p>
+    </div>
+
+    <div class="mt-11 grid gap-8 xl:grid-cols-[minmax(0,1.4fr)_minmax(20rem,1fr)] xl:items-center xl:gap-10">
+      <div class="grid gap-4 sm:grid-cols-2 xl:gap-5">
+        {benefits.map((benefit) => (
+          <article class="flex min-h-40 items-center gap-4 rounded-2xl border border-blue/35 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-blue/70 hover:shadow-panel sm:gap-6 sm:p-6">
+            <span class="grid size-16 shrink-0 place-items-center rounded-full border-2 border-blue/75 bg-blue/[0.04] text-blue sm:size-20">
+              <svg class="size-9 sm:size-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                {benefit.icon.map((path) => <path d={path} />)}
+              </svg>
+            </span>
+            <div class="min-w-0">
+              <h3 class="font-display text-lg font-bold leading-tight tracking-tight text-ink sm:text-xl">{benefit.title}</h3>
+              <p class="mt-2 text-sm leading-6 text-ink-soft sm:text-base sm:leading-7">{benefit.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-line bg-white shadow-panel xl:mx-0 xl:h-[39rem] xl:max-w-none">
+        <img
+          src={assetPath('/images/home/termopanel-dvh.webp.webp')}
+          alt="Esquema de un termopanel DVH con vidrio exterior e interior, cámara de aire, perfil separador y sellado hermético."
+          width="703"
+          height="1088"
+          loading="lazy"
+          decoding="async"
+          class="h-auto w-full xl:h-full xl:object-contain"
+        />
+      </div>
+    </div>
+  </div>
+</section>
