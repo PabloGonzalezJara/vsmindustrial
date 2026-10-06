@@ -60,18 +60,18 @@ const locations: Location[] = [
               />
               <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/65 via-transparent to-transparent"></div>
               <span class={`absolute top-4 left-4 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.18em] ring-1 ring-white/30 bg-white/15 text-white backdrop-blur-sm`}>
-                <span class={`size-1.5 rounded-full ${loc.color === 'teal' ? 'bg-teal' : 'bg-amber'}`}></span>
+                <span class={`size-1.5 rounded-full ${loc.color === 'teal' ? 'bg-amber' : 'bg-amber'}`}></span>
                 {loc.title}
               </span>
             </div>
             <div class="p-7 sm:p-8">
               <div class="flex items-end justify-between">
                 <h3 class="font-display text-3xl font-bold tracking-tight">{loc.city}</h3>
-                <span class="font-display text-5xl font-bold leading-none text-line-soft transition-colors group-hover:text-teal/20" aria-hidden="true">{loc.city.charAt(0)}</span>
+                <span class="font-display text-5xl font-bold leading-none text-line-soft transition-colors group-hover:text-amber/20" aria-hidden="true">{loc.city.charAt(0)}</span>
               </div>
               <p class="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-ink-soft">{loc.tag}</p>
               {loc.address && <p class="mt-5 leading-7 text-ink-soft">{loc.address}</p>}
-              {loc.mapHref && <a href={loc.mapHref} target="_blank" rel="noreferrer" class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-blue transition-colors hover:text-teal">
+              {loc.mapHref && <a href={loc.mapHref} target="_blank" rel="noreferrer" class="mt-7 inline-flex items-center gap-2 text-sm font-bold text-blue transition-colors hover:text-amber">
                 Ver en mapa <span aria-hidden="true">↗</span>
               </a>}
             </div>

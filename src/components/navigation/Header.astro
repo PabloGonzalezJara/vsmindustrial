@@ -30,9 +30,9 @@ const isCurrent = (path: string) => {
             <span class="relative">
               {link.label}
               <!-- Sliding underline -->
-              <span aria-hidden="true" class="nav-link-underline absolute -bottom-2 left-0 h-[3px] w-full origin-left scale-x-0 rounded-full bg-teal transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
+              <span aria-hidden="true" class="nav-link-underline absolute -bottom-2 left-0 h-[3px] w-full origin-left scale-x-0 rounded-full bg-amber transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
               <!-- Glow dot -->
-              <span aria-hidden="true" class="nav-link-dot absolute -bottom-3 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-teal opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:-bottom-1.5"></span>
+              <span aria-hidden="true" class="nav-link-dot absolute -bottom-3 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-amber opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:-bottom-1.5"></span>
             </span>
           </a>
         );
@@ -50,7 +50,7 @@ const isCurrent = (path: string) => {
       </a>
     </nav>
     <details class="group relative md:hidden">
-      <summary class="flex min-h-11 cursor-pointer list-none items-center gap-3 rounded-full border border-amber bg-amber px-4 py-2 text-sm font-bold text-white focus-visible:outline-teal">
+      <summary class="flex min-h-11 cursor-pointer list-none items-center gap-3 rounded-full border border-amber bg-amber px-4 py-2 text-sm font-bold text-white focus-visible:outline-amber">
         <span>Menú</span>
         <span class="text-white transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
       </summary>

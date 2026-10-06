@@ -8,7 +8,7 @@ interface Props {
 const { href, variant = 'primary', ariaLabel } = Astro.props;
 const resolvedHref = href.startsWith('/') ? sitePath(href) : href;
 const styles = {
-  primary: 'bg-teal text-white hover:bg-[#0e8f89] hover:-translate-y-0.5',
+  primary: 'bg-amber text-white hover:bg-[#0e8f89] hover:-translate-y-0.5',
   light: 'bg-white text-blue-dark hover:bg-sky-50 hover:-translate-y-0.5',
   outline: 'border border-white/40 text-white hover:border-white hover:bg-white/10',
   amber: 'bg-amber text-navy hover:bg-amber/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber/30',
