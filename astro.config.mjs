@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://pablogonzalezjara.github.io',
-  base: '/vsmindustrial',
+  base: '/',
   output: 'static',
   vite: {
     plugins: [tailwindcss()],

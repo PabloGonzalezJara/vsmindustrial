@@ -29,7 +29,7 @@ The user requested floating social/contact buttons fixed along the left side of 
   - Add an accessible, responsive Astro component with Instagram, telephone, and email links.
   - Render it globally through `src/layouts/BaseLayout.astro`.
   - Keep the exact Instagram URL: `https://www.instagram.com/vsmindustrialcl?stkn=MWFwc2I2dHUwMXFzNg==`.
-  - Use existing contact destinations: `tel:+56957216357` and `mailto:comunicaciones@grupovsm.cl`.
+  - Use existing contact destinations: `tel:+56972207169` and `mailto:comunicaciones@grupovsm.cl`.
 - [x] **ODD-002 — Verify static build and route coverage** (done)
   - Run `pnpm build` through the authorized verification route; user authorized `dist/` solely for generated build output.
   - Confirm all four routes generate and the floating bar is integrated once via the shared layout.

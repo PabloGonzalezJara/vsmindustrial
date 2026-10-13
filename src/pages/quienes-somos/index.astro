@@ -42,16 +42,16 @@ const team = [
   },
   {
     name: 'Mario Aliste',
-    role: 'Contador Auditor',
+    role: 'Contador General',
     image: assetPath('/images/quienes-somos/mario-aliste.webp'),
-    alt: 'Retrato de Mario Aliste, Contador Auditor de VSM Industrial.',
-  },
-  {
-    name: 'Cristóbal Cerda',
-    role: 'Asistente Administrativo',
-    image: assetPath('/images/quienes-somos/cristobal-cerda.webp'),
-    alt: 'Retrato de Cristóbal Cerda, Asistente Administrativo de VSM Industrial.',
-  },
+    alt: 'Retrato de Mario Aliste, Contador General de VSM Industrial.',
+  }, {
+    name: 'Wilfredo Ozuna',
+    role: 'Ejecutivo de Ventas',
+    image: assetPath('/images/quienes-somos/mario-aliste.webp'),
+    alt: 'Retrato de Wilfredo Ozuna, Ejecutivo de Ventas de VSM Industrial.',
+  }
+  
 ];
 ---
 <BaseLayout
@@ -63,24 +63,29 @@ const team = [
     <div class="absolute -right-40 top-10 size-[28rem] rounded-full bg-blue/30 blur-3xl"></div>
     <div class="absolute -bottom-32 -left-20 size-[24rem] rounded-full bg-amber/20 blur-3xl"></div>
 
-    <div class="shell relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+    <div class="shell relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
       <div>
         <span class="eyebrow">
           <span class="size-1.5 rounded-full bg-amber"></span>
-          Quiénes somos / 03
+          Quiénes somos
         </span>
         <h1 class="font-display mt-5 max-w-3xl text-5xl font-bold leading-[0.98] tracking-[-0.035em] text-shadow-display sm:text-7xl">
           Más de cinco años construyendo <span class="relative inline-block text-amber">
-            soluciones confiables.
+            soluciones confiables
             <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M2 6 Q 50 1, 100 5 T 198 4" stroke="#1d8eea" stroke-width="3" stroke-linecap="round"/>
+              <path d="M2 6 Q 50 1, 100 5 T 100 4 4" stroke="#1d8eea" stroke-width="3" stroke-linecap="round"/>
             </svg>
           </span>
         </h1>
       </div>
-      <p class="max-w-md text-lg leading-8 text-slate-300">
-        Fabricamos ventanas, estructuras de PVC y aluminio y termopaneles de alta calidad para tus proyectos.
-      </p>
+      <!-- Replace public/images/quienes-somos/quienes-somos-hero.webp with the final image; update alt if needed. -->
+      <img
+        src="/images/quienes-somos/quienes-somos-hero.webp"
+        alt="Vista panorámica de la planta y showroom de VSM Industrial."
+        width="1200"
+        height="800"
+        class="aspect-[3/2] w-full rounded-2xl border border-white/10 object-cover"
+      />
     </div>
   </section>
 
@@ -144,7 +149,7 @@ const team = [
           ¿Conversamos?
         </span>
         <h2 class="font-display mt-4 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
-          Conoce a quienes <span class="text-amber">fabrican tus ventanas.</span>
+          Conoce a quienes <span class="text-amber">fabrican tus ventanas</span>
         </h2>
         <p class="mt-5 max-w-xl text-lg leading-8 text-slate-300">
           Te invitamos a recorrer nuestra planta y showroom para entender cada etapa de la fabricación.
